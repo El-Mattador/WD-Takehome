@@ -1,4 +1,3 @@
-questions.json
 manual syllabus LO filled.csv
 dynamic_learning_outcomes.csv
 .gitignore
@@ -21,3 +20,6 @@ results/results_dynamic_google_gemini-2.5-flash-lite.json
 results/results_manual_google_gemini-2.5-flash-lite.json
 lo_index_dynamic.json
 lo_index_manual.json
+.~lock.manual syllabus LO.csv#
+takehomezip.zip
+/zip

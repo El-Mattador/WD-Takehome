@@ -1,0 +1,1150 @@
+{
+  "success": true,
+  "meta": {
+    "grades": [
+      "P3",
+      "P4"
+    ],
+    "totalQuestions": 67,
+    "description": "Singapore MOE Primary Math questions with ground truth labels. Use syllabus endpoint for the full syllabus tree."
+  },
+  "data": [
+    {
+      "id": "P3-002",
+      "grade": "P3",
+      "question": "What is the remainder when 3079 is divided by 8?",
+      "answer": "7",
+      "section": "Section B",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "WHOLE NUMBERS",
+        "topic": "Multiplication and Division",
+        "ref": "1.3.3",
+        "learningOutcome": "division with remainder",
+        "loId": "P3:WHOLE NUMBERS:1.3.3"
+      }
+    },
+    {
+      "id": "P3-006",
+      "grade": "P3",
+      "question": "Ethan left his home at 10:45 am and took 25 minutes to cycle to the hawker centre. After having his lunch, he left the hawker centre at 11:45 am. \n(a) How long was Ethan at the hawker centre?\n(b) From the hawker centre, Ethan cycled for 10 minutes to the supermarket. He spent 1 h 15 min in the supermarket before cycling home. What time did Ethan leave the supermarket?",
+      "answer": "(a) 35 min\n(b) 1:10 pm",
+      "section": "Section C",
+      "label": {
+        "strand": "MEASUREMENT AND GEOMETRY",
+        "subStrand": "MEASUREMENT",
+        "topic": "Time",
+        "ref": "4.2.2",
+        "learningOutcome": "finding the starting time, finishing time or duration given the other two quantities",
+        "loId": "P3:MEASUREMENT:4.2.2"
+      }
+    },
+    {
+      "id": "P3-012",
+      "grade": "P3",
+      "question": "5 x 6 = _____",
+      "options": [
+        "5 x 5 x 5 x 5 x 5 x5",
+        "5 + 5 + 5 + 5 + 5 + 5",
+        "5 + 6 + 5 + 6 + 5 + 6",
+        "6 + 6 + 6 + 6 + 6 + 6"
+      ],
+      "answer": "(2) 5 + 5 + 5 + 5 + 5 + 5",
+      "section": "Section A",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "WHOLE NUMBERS",
+        "topic": "Multiplication and Division",
+        "ref": "1.3.1",
+        "learningOutcome": "multiplication tables of 6, 7, 8 and 9",
+        "loId": "P3:WHOLE NUMBERS:1.3.1"
+      }
+    },
+    {
+      "id": "P3-013",
+      "grade": "P3",
+      "question": "Mr Tan bought 6 loaves of bread. Each loaf is cut into 8 slices of bread. How many slices of bread did Mr Tan have altogether?",
+      "options": [
+        "2",
+        "14",
+        "48",
+        "68"
+      ],
+      "answer": "(3) 48",
+      "section": "Section A",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "WHOLE NUMBERS",
+        "topic": "Multiplication and Division",
+        "ref": "1.3.2",
+        "learningOutcome": "multiplying and dividing within the multiplication tables",
+        "loId": "P3:WHOLE NUMBERS:1.3.2"
+      }
+    },
+    {
+      "id": "P3-014",
+      "grade": "P3",
+      "question": "Mr Aw had $650. He had $127 more than Mr Goh. How much money did Mr Goh have?",
+      "answer": "523",
+      "section": "Section B",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "WHOLE NUMBERS",
+        "topic": "Addition and Subtraction",
+        "ref": "1.2.1",
+        "learningOutcome": "addition and subtraction algorithms (up to 4 digits)",
+        "loId": "P3:WHOLE NUMBERS:1.2.1"
+      }
+    },
+    {
+      "id": "P3-015",
+      "grade": "P3",
+      "question": "Mrs Siva has 650 sweets. She packed all the sweets equally into 6 containers. How many sweets were left unpacked?",
+      "answer": "2",
+      "section": "Section B",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "WHOLE NUMBERS",
+        "topic": "Multiplication and Division",
+        "ref": "1.3.3",
+        "learningOutcome": "division with remainder",
+        "loId": "P3:WHOLE NUMBERS:1.3.3"
+      }
+    },
+    {
+      "id": "P3-016",
+      "grade": "P3",
+      "question": "4 thousands, 6 hundreds and 9 ones is the same as _____ .",
+      "options": [
+        "4069",
+        "4609",
+        "4690",
+        "4960"
+      ],
+      "answer": "(2) 4609",
+      "section": "Section A",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "WHOLE NUMBERS",
+        "topic": "Numbers up to 10 000",
+        "ref": "1.1.2",
+        "learningOutcome": "number notation, representations and place values (thousands, hundreds, tens, ones)",
+        "loId": "P3:WHOLE NUMBERS:1.1.2"
+      }
+    },
+    {
+      "id": "P3-017",
+      "grade": "P3",
+      "question": "What is the missing number in the following number pattern?\n2365 , 2375 , 2395 , _____ , 2465 , 2515",
+      "options": [
+        "2405",
+        "2415",
+        "2425",
+        "2435"
+      ],
+      "answer": "(3) 2425",
+      "section": "Section A",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "WHOLE NUMBERS",
+        "topic": "Numbers up to 10 000",
+        "ref": "1.1.5",
+        "learningOutcome": "patterns in number sequences",
+        "loId": "P3:WHOLE NUMBERS:1.1.5"
+      }
+    },
+    {
+      "id": "P3-018",
+      "grade": "P3",
+      "question": "I am a number between 20 and 40, You can find me in the multiplication tables of 6 and 8. What number am i?",
+      "options": [
+        "24",
+        "28",
+        "30",
+        "32"
+      ],
+      "answer": "(1) 24",
+      "section": "Section A",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "WHOLE NUMBERS",
+        "topic": "Multiplication and Division",
+        "ref": "1.3.1",
+        "learningOutcome": "multiplication tables of 6, 7, 8 and 9",
+        "loId": "P3:WHOLE NUMBERS:1.3.1"
+      }
+    },
+    {
+      "id": "P3-019",
+      "grade": "P3",
+      "question": "Write 9544 in words.",
+      "answer": "nine thousand five hundred and forty-four",
+      "section": "Section B",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "WHOLE NUMBERS",
+        "topic": "Numbers up to 10 000",
+        "ref": "1.1.3",
+        "learningOutcome": "reading and writing numbers in numerals and in words",
+        "loId": "P3:WHOLE NUMBERS:1.1.3"
+      }
+    },
+    {
+      "id": "P3-021",
+      "grade": "P3",
+      "question": "Four students have written the following statements in their books. Which one of the following statements is correct?",
+      "options": [
+        "230 cm = 2 m 3 cm",
+        "203 cm = 2 m 3 cm",
+        "230 m = 2 km 30 m",
+        "2030 m =20 km 30 m"
+      ],
+      "answer": "(2) 203 cm = 2 m 3 cm",
+      "section": "Section A",
+      "label": {
+        "strand": "MEASUREMENT AND GEOMETRY",
+        "subStrand": "MEASUREMENT",
+        "topic": "Length, Mass and Volume",
+        "ref": "4.1.3",
+        "learningOutcome": "converting a measurement in compound units to the smaller unit, and vice versa \n• kilometres and metres \n• metres and centimetres \n• kilograms and grams \n• litres and millilitres \n(numbers involved should be within easy manipulation)",
+        "loId": "P3:MEASUREMENT:4.1.3"
+      }
+    },
+    {
+      "id": "P3-022",
+      "grade": "P3",
+      "question": "A highlighter costs $2.20. An eraser costs $0.45. What is the total cost of a highlighter and two erasers?",
+      "options": [
+        "$2.65",
+        "$3.10",
+        "$4.85",
+        "$5.30"
+      ],
+      "answer": "(2) $3.10",
+      "section": "Section A",
+      "label": {
+        "strand": "MEASUREMENT AND GEOMETRY",
+        "subStrand": "MONEY",
+        "topic": "Money",
+        "ref": "3.1.1",
+        "learningOutcome": "adding and subtracting money in decimal notation",
+        "loId": "P3:MONEY:3.1.1"
+      }
+    },
+    {
+      "id": "P3-023",
+      "grade": "P3",
+      "question": "Express 6 ℓ 8 mℓ in mℓ.",
+      "options": [
+        "608 mℓ",
+        "680 mℓ",
+        "6008 mℓ",
+        "6800 mℓ"
+      ],
+      "answer": "(3) 6008 mℓ",
+      "section": "Section A",
+      "label": {
+        "strand": "MEASUREMENT AND GEOMETRY",
+        "subStrand": "MEASUREMENT",
+        "topic": "Length, Mass and Volume",
+        "ref": "4.1.3",
+        "learningOutcome": "converting a measurement in compound units to the smaller unit, and vice versa \n• kilometres and metres \n• metres and centimetres \n• kilograms and grams \n• litres and millilitres \n(numbers involved should be within easy manipulation)",
+        "loId": "P3:MEASUREMENT:4.1.3"
+      }
+    },
+    {
+      "id": "P3-024",
+      "grade": "P3",
+      "question": "Which one of the following fractions is greater than 1/2?",
+      "options": [
+        "4/7",
+        "5/10",
+        "3/7",
+        "2/5"
+      ],
+      "answer": "(1) 4/7",
+      "section": "Section A",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "FRACTIONS",
+        "topic": "Equivalent fractions",
+        "ref": "2.1.3",
+        "learningOutcome": "comparing and ordering unlike fractions with denominators of given fractions not exceeding 12",
+        "loId": "P3:FRACTIONS:2.1.3"
+      }
+    },
+    {
+      "id": "P3-026",
+      "grade": "P3",
+      "question": "Write seven thousand and forty-nine in numerals.",
+      "answer": "7049",
+      "section": "Section B",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "WHOLE NUMBERS",
+        "topic": "Numbers up to 10 000",
+        "ref": "1.1.3",
+        "learningOutcome": "reading and writing numbers in numerals and in words",
+        "loId": "P3:WHOLE NUMBERS:1.1.3"
+      }
+    },
+    {
+      "id": "P3-029",
+      "grade": "P3",
+      "question": "Find the value of 1/12 + 2/3. Express your answer as a fraction in its simplest form.",
+      "answer": "3/4",
+      "section": "Section B",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "FRACTIONS",
+        "topic": "Equivalent fractions",
+        "ref": "2.1.2",
+        "learningOutcome": "expressing a fraction in its simplest form",
+        "loId": "P3:FRACTIONS:2.1.2"
+      }
+    },
+    {
+      "id": "P3-032",
+      "grade": "P3",
+      "question": "Jimmy went for a run in the park. His watch was 15 minutes slow. The run lasted 135 min. According to his watch, he stopped running at 8.05 p.m. What was the actual time he started his run?",
+      "answer": "6:05 p.m.",
+      "section": "Section B",
+      "label": {
+        "strand": "MEASUREMENT AND GEOMETRY",
+        "subStrand": "MEASUREMENT",
+        "topic": "Time",
+        "ref": "4.2.2",
+        "learningOutcome": "finding the starting time, finishing time or duration given the other two quantities",
+        "loId": "P3:MEASUREMENT:4.2.2"
+      }
+    },
+    {
+      "id": "P3-033",
+      "grade": "P3",
+      "question": "Anne paid $720 for a pair of shoes and a belt. The pair of shoes cost 4 times as much as the belt. She also bought a shirt which cost $45 more than the belt. How much did the shirt cost?",
+      "answer": "189",
+      "section": "Section C",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "WHOLE NUMBERS",
+        "topic": "Multiplication and Division",
+        "ref": "1.3.4",
+        "learningOutcome": "multiplication and division algorithms (up to 3 digits by 1 digit)",
+        "loId": "P3:WHOLE NUMBERS:1.3.4"
+      }
+    },
+    {
+      "id": "P3-038",
+      "grade": "P3",
+      "question": "Arrange the numbers in increasing order.\n9461, 6857, 6535, 9716",
+      "answer": "6535, 6857, 9461, 9716",
+      "section": "Section B",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "WHOLE NUMBERS",
+        "topic": "Numbers up to 10 000",
+        "ref": "1.1.4",
+        "learningOutcome": "comparing and ordering numbers",
+        "loId": "P3:WHOLE NUMBERS:1.1.4"
+      }
+    },
+    {
+      "id": "P3-041",
+      "grade": "P3",
+      "question": "Mrs Tan had some blueberries. She packed them equally into 9 boxes and found that she had 600g of blueberries left. Each box had 720g of blueberries. What was the mass of blueberries Mrs Tan had at first? Give your answer in kilograms and grams.",
+      "answer": "7 kg 80 g",
+      "section": "Section C",
+      "label": {
+        "strand": "MEASUREMENT AND GEOMETRY",
+        "subStrand": "MEASUREMENT",
+        "topic": "Length, Mass and Volume",
+        "ref": "4.1.2",
+        "learningOutcome": "measuring length/mass/volume (of liquid) in compound units",
+        "loId": "P3:MEASUREMENT:4.1.2"
+      }
+    },
+    {
+      "id": "P3-042",
+      "grade": "P3",
+      "question": "Mr Lim bought a pair of headphones for $62.60. He bought a watch that cost $17.50 or less. How much did he pay in total?",
+      "answer": "107.7",
+      "section": "Section C",
+      "label": {
+        "strand": "MEASUREMENT AND GEOMETRY",
+        "subStrand": "MONEY",
+        "topic": "Money",
+        "ref": "3.1.1",
+        "learningOutcome": "adding and subtracting money in decimal notation",
+        "loId": "P3:MONEY:3.1.1"
+      }
+    },
+    {
+      "id": "P3-044",
+      "grade": "P3",
+      "question": "Which of the following figures does not show 1/4 of the figure shaded?",
+      "answer": "",
+      "section": "Section A",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "FRACTIONS",
+        "topic": "Equivalent fractions",
+        "ref": "2.1.3",
+        "learningOutcome": "comparing and ordering unlike fractions with denominators of given fractions not exceeding 12",
+        "loId": "P3:FRACTIONS:2.1.3"
+      }
+    },
+    {
+      "id": "P3-049",
+      "grade": "P3",
+      "question": "What is the missing number in the pattern?\n1620, 1720, 1820, 1920, _____, 2120",
+      "answer": "2020",
+      "section": "Section B",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "WHOLE NUMBERS",
+        "topic": "Numbers up to 10 000",
+        "ref": "1.1.1",
+        "learningOutcome": "counting in hundreds/thousands",
+        "loId": "P3:WHOLE NUMBERS:1.1.1"
+      }
+    },
+    {
+      "id": "P3-055",
+      "grade": "P3",
+      "question": "Ann had 905 stamps and Bala had 299 stamps. Ann had 230 more stamps than Colin. How many more stamps did Colin have than Bala?",
+      "answer": "376",
+      "section": "Section C",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "WHOLE NUMBERS",
+        "topic": "Addition and Subtraction",
+        "ref": "1.2.1",
+        "learningOutcome": "addition and subtraction algorithms (up to 4 digits)",
+        "loId": "P3:WHOLE NUMBERS:1.2.1"
+      }
+    },
+    {
+      "id": "P3-057",
+      "grade": "P3",
+      "question": "Mary had 29 coins. She had 15 one-dollar coins and the rest were fifty-cents and ten-cents coins. She had $20.80 altogether. How many fifty-cents coins did Mary have?",
+      "answer": "11",
+      "section": "Section C",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "MONEY",
+        "topic": "Money",
+        "ref": "3.1.1",
+        "learningOutcome": "adding and subtracting money in decimal notation",
+        "loId": "P3:MONEY:3.1.1"
+      }
+    },
+    {
+      "id": "P3-059",
+      "grade": "P3",
+      "question": "Which fraction is not equivalent to 2/3?",
+      "options": [
+        "6/9",
+        "9/12",
+        "10/15",
+        "14/21"
+      ],
+      "answer": "(2) 9/12",
+      "section": "Section A",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "FRACTIONS",
+        "topic": "Equivalent fractions",
+        "ref": "2.1.1",
+        "learningOutcome": "equivalent fractions",
+        "loId": "P3:FRACTIONS:2.1.1"
+      }
+    },
+    {
+      "id": "P3-061",
+      "grade": "P3",
+      "question": "9 hundreds x 4 = _____",
+      "options": [
+        "36",
+        "360",
+        "904",
+        "3600"
+      ],
+      "answer": "(4) 3600",
+      "section": "Section A",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "WHOLE NUMBERS",
+        "topic": "Numbers up to 10 000",
+        "ref": "1.1.1",
+        "learningOutcome": "counting in hundreds/thousands",
+        "loId": "P3:WHOLE NUMBERS:1.1.1"
+      }
+    },
+    {
+      "id": "P3-064",
+      "grade": "P3",
+      "question": "Adam, Ben and Clarice shared a chocolate bar. Adam ate 5/12 of the chocolate bar while Ben ate 1/4 of the chocolate bar. Clarice ate the rest of the chocolate bar. \n(a) What fraction of the chocolate bar did Adam and Ben eat altogether? Give your answer in the simplest form.\n(b) How much more of the chocolate bar was eaten by Clarice than Ben?",
+      "answer": "(a) 2/3\n(b) 1/12",
+      "section": "Section C",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "FRACTIONS",
+        "topic": "Addition and Subtraction",
+        "ref": "2.2.1",
+        "learningOutcome": "adding and subtracting two related fractions within one whole with denominators of given fractions not exceeding 12",
+        "loId": "P3:FRACTIONS:2.2.1"
+      }
+    },
+    {
+      "id": "P3-065",
+      "grade": "P3",
+      "question": "Mdm Owen had 17 stickers at first. Then, she bought 19 more stickers. She packed all her stickers equally into 4 packets. How many stickers were there in each packet?",
+      "answer": "9",
+      "section": "Section C",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "WHOLE NUMBERS",
+        "topic": "Addition and Subtraction",
+        "ref": "1.2.2",
+        "learningOutcome": "mental calculation involving addition and subtraction of two 2-digit numbers",
+        "loId": "P3:WHOLE NUMBERS:1.2.2"
+      }
+    },
+    {
+      "id": "P3-067",
+      "grade": "P3",
+      "question": "Arrange the following numbers in decreasing order.\n9452, 5924, 9254",
+      "options": [
+        "5924, 9452, 9254",
+        "5924, 9254, 9542",
+        "9254, 5924, 9542",
+        "9452, 9254, 5924"
+      ],
+      "answer": "(2) 5924, 9254, 9542",
+      "section": "Section A",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "WHOLE NUMBERS",
+        "topic": "Numbers up to 10 000",
+        "ref": "1.1.4",
+        "learningOutcome": "comparing and ordering numbers",
+        "loId": "P3:WHOLE NUMBERS:1.1.4"
+      }
+    },
+    {
+      "id": "P4-001",
+      "grade": "P4",
+      "question": "12 thousands and 7 tens is the same as ____.",
+      "options": [
+        "127",
+        "1207",
+        "12 070",
+        "12 700"
+      ],
+      "answer": "(3) 12 070",
+      "section": "Section A",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "WHOLE NUMBERS",
+        "topic": "Numbers up to 100 000",
+        "ref": "1.1.1",
+        "learningOutcome": "number notation, representations and place values (ten thousands, thousands, hundreds, tens, ones)",
+        "loId": "P4:WHOLE NUMBERS:1.1.1"
+      }
+    },
+    {
+      "id": "P4-002",
+      "grade": "P4",
+      "question": "Which number when rounded to the nearest ten becomes 36 500?",
+      "options": [
+        "36 498",
+        "36 505",
+        "36 512",
+        "36 524"
+      ],
+      "answer": "(1) 36 498",
+      "section": "Section A",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "WHOLE NUMBERS",
+        "topic": "Numbers up to 100 000",
+        "ref": "1.1.5",
+        "learningOutcome": "rounding numbers to the nearest 10, 100 or 1000",
+        "loId": "P4:WHOLE NUMBERS:1.1.5"
+      }
+    },
+    {
+      "id": "P4-003",
+      "grade": "P4",
+      "question": "Express 4 3/25 as a decimal.",
+      "options": [
+        "4.012",
+        "4.325",
+        "4.12",
+        "4.65"
+      ],
+      "answer": "(3) 4.12",
+      "section": "Section A",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "DECIMALS",
+        "topic": "Decimals up to 3 decimal places",
+        "ref": "3.1.3",
+        "learningOutcome": "expressing decimals as fractions",
+        "loId": "P4:DECIMALS:3.1.3"
+      }
+    },
+    {
+      "id": "P4-005",
+      "grade": "P4",
+      "question": "How many one-thirds are there in 5 wholes?",
+      "options": [
+        "3/5",
+        "5/3",
+        "3",
+        "15"
+      ],
+      "answer": "(4) 15",
+      "section": "Section A",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "FRACTIONS",
+        "topic": "Fraction of a Set",
+        "ref": "2.2.1",
+        "learningOutcome": "fraction as part of a set",
+        "loId": "P4:FRACTIONS:2.2.1"
+      }
+    },
+    {
+      "id": "P4-006",
+      "grade": "P4",
+      "question": "Ahmad and Bala had 180 erasers altogether.\nBala had three times as many erasers as Ahmad.\nHow many more erasers did Bala have than Ahmad?",
+      "options": [
+        "45",
+        "60",
+        "90",
+        "120"
+      ],
+      "answer": "(3) 90",
+      "section": "Section A",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "WHOLE NUMBERS",
+        "topic": "Four Operations",
+        "ref": "1.3.2",
+        "learningOutcome": "division algorithm (up to 4 digits by 1 digit)",
+        "loId": "P4:WHOLE NUMBERS:1.3.2"
+      }
+    },
+    {
+      "id": "P4-007",
+      "grade": "P4",
+      "question": "The first two common multiples of 6 and 8 are ____.",
+      "options": [
+        "1 and 2",
+        "2 and 4",
+        "12 and 24",
+        "24 and 48"
+      ],
+      "answer": "(4) 24 and 48",
+      "section": "Section A",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "WHOLE NUMBERS",
+        "topic": "Factors and Multiples",
+        "ref": "1.2.5",
+        "learningOutcome": "finding the common multiples of two given 1-digit numbers",
+        "loId": "P4:WHOLE NUMBERS:1.2.5"
+      }
+    },
+    {
+      "id": "P4-010",
+      "grade": "P4",
+      "question": "Which of the following figure is a symmetric figure?",
+      "answer": "2",
+      "section": "Section A",
+      "label": {
+        "strand": "MEASUREMENT AND GEOMETRY",
+        "subStrand": "GEOMETRY",
+        "topic": "Line Symmetry",
+        "ref": "5.3.1",
+        "learningOutcome": "identifying symmetric figures",
+        "loId": "P4:GEOMETRY:5.3.1"
+      }
+    },
+    {
+      "id": "P4-011",
+      "grade": "P4",
+      "question": "Which of the following figures does not have a line of symmetry",
+      "answer": "1",
+      "section": "Section A",
+      "label": {
+        "strand": "MEASUREMENT AND GEOMETRY",
+        "subStrand": "GEOMETRY",
+        "topic": "Line Symmetry",
+        "ref": "5.3.2",
+        "learningOutcome": "determining whether a straight line is a line of symmetry of a symmetric figure",
+        "loId": "P4:GEOMETRY:5.3.2"
+      }
+    },
+    {
+      "id": "P4-019",
+      "grade": "P4",
+      "question": "Jamie bought 8 boxes of biscuits. Each box of biscuits cost $1.20. She gave the cashier $50. How much change did Jamie receive?",
+      "options": [
+        "$9.20",
+        "$9.60",
+        "$40.40",
+        "$41.60"
+      ],
+      "answer": "(3) $40.40",
+      "section": "Section A",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "DECIMALS",
+        "topic": "Addition and Subtraction",
+        "ref": "3.2.1",
+        "learningOutcome": "adding and subtracting decimals (up to 2 decimal places)",
+        "loId": "P4:DECIMALS:3.2.1"
+      }
+    },
+    {
+      "id": "P4-027",
+      "grade": "P4",
+      "question": "Which of the following decimals is the smallest?",
+      "options": [
+        "4.09",
+        "4.17",
+        "4.056",
+        "4.302"
+      ],
+      "answer": "(3) 4.056",
+      "section": "Section A",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "DECIMALS",
+        "topic": "Decimals up to 3 decimal places",
+        "ref": "3.1.2",
+        "learningOutcome": "comparing and ordering decimals",
+        "loId": "P4:DECIMALS:3.1.2"
+      }
+    },
+    {
+      "id": "P4-028",
+      "grade": "P4",
+      "question": "Which of the following is a multiple of 6?",
+      "options": [
+        "32",
+        "24",
+        "3",
+        "16"
+      ],
+      "answer": "(2) 24",
+      "section": "Section A",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "WHOLE NUMBERS",
+        "topic": "Factors and Multiples",
+        "ref": "1.2.4",
+        "learningOutcome": "determining if a number is a multiple of a given 1-digit number",
+        "loId": "P4:WHOLE NUMBERS:1.2.4"
+      }
+    },
+    {
+      "id": "P4-032",
+      "grade": "P4",
+      "question": "In which of the following are the numbers arranged from the smallest to the greatest?\n1053, 1305, 1035",
+      "answer": "(2) 1035 1053 1305",
+      "section": "Section A",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "WHOLE NUMBERS",
+        "topic": "Numbers up to 100 000",
+        "ref": "1.1.3",
+        "learningOutcome": "comparing and ordering numbers",
+        "loId": "P4:WHOLE NUMBERS:1.1.3"
+      }
+    },
+    {
+      "id": "P4-033",
+      "grade": "P4",
+      "question": "Which of the following is a factor of both 12 and 28?",
+      "options": [
+        "8",
+        "7",
+        "6",
+        "4"
+      ],
+      "answer": "(4) 4",
+      "section": "Section A",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "WHOLE NUMBERS",
+        "topic": "Factors and Multiples",
+        "ref": "1.2.3",
+        "learningOutcome": "finding the common factors of two given numbers",
+        "loId": "P4:WHOLE NUMBERS:1.2.3"
+      }
+    },
+    {
+      "id": "P4-039",
+      "grade": "P4",
+      "question": "Write the missing number in the number pattern below.\n14 000, 13 400, 12 800, 12 000, _____, 11 000",
+      "answer": "11600",
+      "section": "Section B",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "WHOLE NUMBERS",
+        "topic": "Numbers up to 100 000",
+        "ref": "1.1.4",
+        "learningOutcome": "patterns in number sequences",
+        "loId": "P4:WHOLE NUMBERS:1.1.4"
+      }
+    },
+    {
+      "id": "P4-040",
+      "grade": "P4",
+      "question": "Arrange these numbers from the smallest to the greatest.\n4/5, 0.405, 0.045",
+      "answer": "0.045, 0.405, 4/5",
+      "section": "Section B",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "DECIMALS",
+        "topic": "Mixed Numbers and Improper Fractions",
+        "ref": "3.1.2",
+        "learningOutcome": "comparing and ordering decimals",
+        "loId": "P4:DECIMALS:3.1.2"
+      }
+    },
+    {
+      "id": "P4-041",
+      "grade": "P4",
+      "question": "Tony listed the factors of 81 below.\n1, 3, 81\nHe missed out two factors. What are the two missing factors?",
+      "answer": "27 and 9",
+      "section": "Section B",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "WHOLE NUMBERS",
+        "topic": "Factors and Multiples",
+        "ref": "1.2.2",
+        "learningOutcome": "determining if a 1-digit number is a factor of a given number within 100",
+        "loId": "P4:WHOLE NUMBERS:1.2.2"
+      }
+    },
+    {
+      "id": "P4-042",
+      "grade": "P4",
+      "question": "What is the value of 5/8 + 3/4? \nExpress your answer as a mixed number.",
+      "answer": "1 3/8",
+      "section": "Section B",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "FRACTIONS",
+        "topic": "Addition and Subtraction",
+        "ref": "2.3.1",
+        "learningOutcome": "adding and subtracting fractions with denominators of given fractions not exceeding 12 and not more than two different denominators",
+        "loId": "P4:FRACTIONS:2.3.1"
+      }
+    },
+    {
+      "id": "P4-045",
+      "grade": "P4",
+      "question": "There were twice as many women as men at a carnival. After 180 women left the carnival, the number of men was twice the number of women who remained. How many men were there?",
+      "answer": "120",
+      "section": "Section B",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "WHOLE NUMBERS",
+        "topic": "Four Operations",
+        "ref": "1.3.1",
+        "learningOutcome": "multiplication algorithm: \n • up to 4 digits by 1 digit \n • up to 3 digits by 2 digits",
+        "loId": "P4:WHOLE NUMBERS:1.3.1"
+      }
+    },
+    {
+      "id": "P4-047",
+      "grade": "P4",
+      "question": "Round 599.83 to the nearest whole number.",
+      "answer": "600",
+      "section": "Section B",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "DECIMALS",
+        "topic": "Decimals up to 3 decimal places",
+        "ref": "3.1.5",
+        "learningOutcome": "rounding decimals to   \n• the nearest whole number  \n• 1 decimal place  \n• 2 decimal places",
+        "loId": "P4:DECIMALS:3.1.5"
+      }
+    },
+    {
+      "id": "P4-050",
+      "grade": "P4",
+      "question": "Write thirteen thousand and forty-three in numerals.",
+      "answer": "13043",
+      "section": "Section B",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "WHOLE NUMBERS",
+        "topic": "Numbers up to 100 000",
+        "ref": "1.1.2",
+        "learningOutcome": "reading and writing numbers in numerals and in words",
+        "loId": "P4:WHOLE NUMBERS:1.1.2"
+      }
+    },
+    {
+      "id": "P4-053",
+      "grade": "P4",
+      "question": "Grace has some yellow and blue balls. Balls of the same colour have the same mass. The mass of 1 blue ball and 1 yellow ball is 1.25 kg. The mass of 1 bue ball and 3 yellow balls is 2.85 kg.",
+      "answer": "0.80 kg",
+      "section": "Section B",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "DECIMALS",
+        "topic": "Addition and Subtraction",
+        "ref": "3.2.1",
+        "learningOutcome": "adding and subtracting decimals (up to 2 decimal places)",
+        "loId": "P4:DECIMALS:3.2.1"
+      }
+    },
+    {
+      "id": "P4-055",
+      "grade": "P4",
+      "question": "Torch A flashes every 4 minutes.\nTorch B flashes every 6 minutes.\nTorch A and Torch B flashed together at 7:30 a.m.\nAt what time would both torches next flash together?",
+      "answer": "07:42:00",
+      "section": "Section B",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "WHOLE NUMBERS",
+        "topic": "Factors and Multiples",
+        "ref": "1.2.5",
+        "learningOutcome": "finding the common multiples of two given 1-digit numbers",
+        "loId": "P4:WHOLE NUMBERS:1.2.5"
+      }
+    },
+    {
+      "id": "P4-058",
+      "grade": "P4",
+      "question": "Write 5 thousandths as a decimal.",
+      "answer": "0.005",
+      "section": "Section B",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "DECIMALS",
+        "topic": "Decimals up to 3 decimal places",
+        "ref": "3.1.1",
+        "learningOutcome": "notation and place values (tenths, hundredths, thousandths)",
+        "loId": "P4:DECIMALS:3.1.1"
+      }
+    },
+    {
+      "id": "P4-060",
+      "grade": "P4",
+      "question": "Express 3 ÷ 7 as a decimal. Round your answer to the nearest hundredth.",
+      "answer": "0.43",
+      "section": "Section B",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "DECIMALS",
+        "topic": "Multiplication and Division",
+        "ref": "3.3.2",
+        "learningOutcome": "dividing a whole number by a whole number with quotient as a decimal",
+        "loId": "P4:DECIMALS:3.3.2"
+      }
+    },
+    {
+      "id": "P4-061",
+      "grade": "P4",
+      "question": "A bag of sand had a mass of 109 kg. It was repacked into 7 sacks. What was the mass of each sack? Give your answer to 1 correct decimal place.",
+      "answer": "15.6 kg",
+      "section": "Section B",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "DECIMALS",
+        "topic": "Multiplication and Division",
+        "ref": "3.3.2",
+        "learningOutcome": "dividing a whole number by a whole number with quotient as a decimal",
+        "loId": "P4:DECIMALS:3.3.2"
+      }
+    },
+    {
+      "id": "P4-067",
+      "grade": "P4",
+      "question": "Express 87/100 as a decimal.",
+      "answer": "0.87",
+      "section": "Section B",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "DECIMALS",
+        "topic": "Decimals up to 3 decimal places",
+        "ref": "3.1.3",
+        "learningOutcome": "expressing decimals as fractions",
+        "loId": "P4:DECIMALS:3.1.3"
+      }
+    },
+    {
+      "id": "P4-070",
+      "grade": "P4",
+      "question": "Write the missing number in the number pattern below.\n11 000, 10 060, 10 200, _____ , 9400",
+      "answer": "9800",
+      "section": "Section B",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "WHOLE NUMBERS",
+        "topic": "Numbers up to 100 000",
+        "ref": "1.1.4",
+        "learningOutcome": "patterns in number sequences",
+        "loId": "P4:WHOLE NUMBERS:1.1.4"
+      }
+    },
+    {
+      "id": "P4-074",
+      "grade": "P4",
+      "question": "Round 26 510 to the nearest hundred.",
+      "answer": "",
+      "section": "Section B",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "WHOLE NUMBERS",
+        "topic": "Numbers up to 100 000",
+        "ref": "1.1.6",
+        "learningOutcome": "use of ≈",
+        "loId": "P4:WHOLE NUMBERS:1.1.6"
+      }
+    },
+    {
+      "id": "P4-076",
+      "grade": "P4",
+      "question": "Muthu has fewer than 50 comic books.\nIf he gives all his comic books equally to 7 friends, there will be 3 comic books left.\nIf he gives all his comic books equally to 9 friends, he will have no comic books left. \nHow many books does Muthu have?",
+      "answer": "45",
+      "section": "Section C",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "WHOLE NUMBERS",
+        "topic": "Factors and Multiples",
+        "ref": "1.2.4",
+        "learningOutcome": "determining if a number is a multiple of a given 1-digit number",
+        "loId": "P4:WHOLE NUMBERS:1.2.4"
+      }
+    },
+    {
+      "id": "P4-077",
+      "grade": "P4",
+      "question": "Gordon had 9 bags of flour. Each bag contained 12.25 kg of flour\n(a) How much flour did Gordon have altogether?\n(b) Gordon bought 24.75 kg of flour. He then repacked all the flour equally into smaller packets. If each smaller packet contained 3 kg of flour, how many smaller packets of flour did Gordon pack?",
+      "answer": "(a) 110.25 kg\n(b) 45 kg",
+      "section": "Section C",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "DECIMALS",
+        "topic": "Multiplication and Division",
+        "ref": "3.3.1",
+        "learningOutcome": "multiplying and dividing decimals (up to 2 decimal places) by a 1-digit whole number",
+        "loId": "P4:DECIMALS:3.3.1"
+      }
+    },
+    {
+      "id": "P4-078",
+      "grade": "P4",
+      "question": "Vincent mixed 6.4 ℓ of blue paint with 7 ℓ if white paint. After he poured some of the paint into 1 large and 1 small empty tin, there was 2.15 ℓ of paint left. The volume of a large tin was five times as much as a small tin.\n(a) How much paint did he mix altogether?\n(b) How much paint was there in the small tin? Give your answer correct to 1 decimal place.",
+      "answer": "(a) 13.4 ℓ\n(b) 1.9 ℓ",
+      "section": "Section C",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "DECIMALS",
+        "topic": "Decimals up to 3 decimal places",
+        "ref": "3.1.5",
+        "learningOutcome": "rounding decimals to   \n• the nearest whole number  \n• 1 decimal place  \n• 2 decimal places",
+        "loId": "P4:DECIMALS:3.1.5"
+      }
+    },
+    {
+      "id": "P4-080",
+      "grade": "P4",
+      "question": "At first, there were a total of 1638 children at a carnival. After 1/2 of the boys and 4/5 of the girls went home, there was an equal number of boys and girls remaining at the carnival. How many more girls than boys were there at the carnival at first?",
+      "answer": "702",
+      "section": "Section C",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "FRACTIONS",
+        "topic": "Addition and Subtraction",
+        "ref": "2.3.1",
+        "learningOutcome": "adding and subtracting fractions with denominators of given fractions not exceeding 12 and not more than two different denominators",
+        "loId": "P4:FRACTIONS:2.3.1"
+      }
+    },
+    {
+      "id": "P4-081",
+      "grade": "P4",
+      "question": "Aini, Kathy and Mandy formed a team to compete a 4-km race. Aini ran 3/4 km. The distance Aini ran was 2/3 km shorter than the distance ran by Kathy. The rest of the race was run by Mandy.\n(a) What was the distance completed by Kathy?\n(b) What was the distance completed by Mandy? Express your answer as a mixed number in its simplest form.",
+      "answer": "(a) 1 5/12\n(b) 1 5/6",
+      "section": "Section C",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "FRACTIONS",
+        "topic": "Mixed Numbers and Improper Fractions",
+        "ref": "2.1.2",
+        "learningOutcome": "conversion of an improper fraction to a mixed number and vice versa",
+        "loId": "P4:FRACTIONS:2.1.2"
+      }
+    },
+    {
+      "id": "P4-090",
+      "grade": "P4",
+      "question": "The total mass of an empty school bag and 5 similar books was 5.4 kg. The total mass of the same school bag and 2 similar books was 3 kg.\n(a) What was the mass of 1 book?\n(b) What was the mass of the empty school bag?",
+      "answer": "(a) 0.8 kg\n(b) 1.4 kg",
+      "section": "Section C",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "DECIMALS",
+        "topic": "Addition and Subtraction",
+        "ref": "3.2.1",
+        "learningOutcome": "adding and subtracting decimals (up to 2 decimal places)",
+        "loId": "P4:DECIMALS:3.2.1"
+      }
+    },
+    {
+      "id": "P4-091",
+      "grade": "P4",
+      "question": "A bookshop sold any 3 items for $5. To celebrate SG60, the bookshop gave away 1 free item for every 3 items bought.\n(a) Anne shopped at the bookshop and left with a total of 72 items in in her bag. How many free items did she get?\n(b) Bala had $145. how many items will he bring home in total?",
+      "answer": "(a) 18\n(b) 116",
+      "section": "Section C",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "WHOLE NUMBERS",
+        "topic": "Four Operations",
+        "ref": "1.3.1",
+        "learningOutcome": "multiplication algorithm: \n • up to 4 digits by 1 digit \n • up to 3 digits by 2 digits",
+        "loId": "P4:WHOLE NUMBERS:1.3.1"
+      }
+    },
+    {
+      "id": "P4-092",
+      "grade": "P4",
+      "question": "A school printed a total of 4398 worksheets on Monday, Tuesday and Wednesday. it printed 1220 more worksheets on Monday than on Tuesday. The number of worksheets printed on Tuesday was 3 times the number of worksheets printed on Wednesday. How many worksheets were printed on Tuesday?",
+      "answer": "1362",
+      "section": "Section C",
+      "label": {
+        "strand": "NUMBER AND ALGEBRA",
+        "subStrand": "WHOLE NUMBERS",
+        "topic": "Four Operations",
+        "ref": "1.3.1",
+        "learningOutcome": "multiplication algorithm: \n • up to 4 digits by 1 digit \n • up to 3 digits by 2 digits",
+        "loId": "P4:WHOLE NUMBERS:1.3.1"
+      }
+    },
+    {
+      "id": "P4-093",
+      "grade": "P4",
+      "question": "In the square grid below, draw and label Rectangle ABCD where the length of Rectangle ABCD is twice its breadth. One of its breadth AB has been drawn for you.",
+      "answer": "",
+      "section": "Section C",
+      "label": {
+        "strand": "MEASUREMENT AND GEOMETRY",
+        "subStrand": "GEOMETRY",
+        "topic": "Rectangle and Square",
+        "ref": "5.2.2",
+        "learningOutcome": "drawing rectangles and squares",
+        "loId": "P4:GEOMETRY:5.2.2"
+      }
+    }
+  ]
+}
