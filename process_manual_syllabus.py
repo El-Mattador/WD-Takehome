@@ -5,8 +5,8 @@ import pandas as pd
 
 INPUT_CSV  = "manual syllabus LO.csv"
 OUTPUT_CSV = "manual syllabus LO filled.csv"
-TREE_JSON  = "syllabus_tree.json"
-INDEX_JSON = "lo_index.json"
+TREE_JSON  = "syllabus_tree_manual.json"
+INDEX_JSON = "lo_index_manual.json"
 
 
 def strip_topic_prefix(topic: str) -> str:

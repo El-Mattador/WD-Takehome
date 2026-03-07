@@ -10,3 +10,14 @@ lo_index.json
 .env
 dynamic syllabus LO.csv
 .~lock.dynamic syllabus LO filled.csv#
+__pycache__/classifier.cpython-310.pyc
+__pycache__/evaluate.cpython-310.pyc
+__pycache__/process_dynamic_syllabus.cpython-310.pyc
+__pycache__/process_manual_syllabus.cpython-310.pyc
+dynamic syllabus LO filled.csv
+syllabus_tree_dynamic.json
+syllabus_tree_manual.json
+results/results_dynamic_google_gemini-2.5-flash-lite.json
+results/results_manual_google_gemini-2.5-flash-lite.json
+lo_index_dynamic.json
+lo_index_manual.json

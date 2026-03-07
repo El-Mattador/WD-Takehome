@@ -61,16 +61,16 @@ Which learning outcome? Reply with the number only.
 
 # ── LLM call ──────────────────────────────────────────────────────────────────
 
-def _call_llm(prompt: str) -> str:
+def _call_llm(prompt: str, api_key: str | None = None, model: str | None = None) -> str:
     """Send a single prompt, return stripped text response."""
     resp = requests.post(
         url=OPENROUTER_URL,
         headers={
-            "Authorization": f"Bearer {API_KEY}",
+            "Authorization": f"Bearer {api_key or API_KEY}",
             "Content-Type": "application/json",
         },
         json={
-            "model": MODEL,
+            "model": model or MODEL,
             "messages": [{"role": "user", "content": prompt}],
             "max_tokens": MAX_RESPONSE_TOKENS,
         },
@@ -97,10 +97,16 @@ def _numbered(items: list[str]) -> str:
     return "\n".join(f"{i+1}. {item}" for i, item in enumerate(items))
 
 
-def _classify_step(prompt_template: str, options: list[str], **kwargs) -> tuple[int, str]:
+def _classify_step(
+    prompt_template: str,
+    options: list[str],
+    api_key: str | None = None,
+    model: str | None = None,
+    **kwargs,
+) -> tuple[int, str]:
     """Format a prompt, call the LLM, and return the (chosen index, prompt used)."""
     prompt = prompt_template.format(options=_numbered(options), **kwargs)
-    raw = _call_llm(prompt)
+    raw = _call_llm(prompt, api_key=api_key, model=model)
     return _pick(raw, options), prompt
 
 
@@ -113,51 +119,73 @@ def load_tree(path: Path = SYLLABUS_FILE) -> dict:
 
 # ── Core classifier ───────────────────────────────────────────────────────────
 
-def classify(question: str, tree: dict | None = None, verbose: bool = False) -> dict:
+def classify(
+    question: str,
+    tree: dict | None = None,
+    verbose: bool = False,
+    return_trace: bool = False,
+    api_key: str | None = None,
+    model: str | None = None,
+) -> dict | tuple[dict, list]:
     """
     Classify a math question through 4 hierarchical LLM calls.
 
     Args:
-        question: The math question to classify.
-        tree:     Pre-loaded syllabus tree; loaded from disk if not provided.
-        verbose:  Print each prompt before the LLM call, for explainability.
+        question:     The math question to classify.
+        tree:         Pre-loaded syllabus tree; loaded from disk if not provided.
+        verbose:      Print each prompt to stdout, for CLI explainability.
+        return_trace: If True, also return a list of step dicts for UI display.
+        api_key:      Override the API key from env.
+        model:        Override the model from env.
 
     Returns:
         {strand, subStrand, topic, learningOutcome, loId}
+        If return_trace=True, returns (result_dict, trace_list) where each trace
+        step is {step, options, chosen}.
     """
     if tree is None:
         tree = load_tree()
 
-    def step(template, options, **kwargs) -> int:
-        idx, prompt = _classify_step(template, options, question=question, **kwargs)
+    trace = []
+
+    def step(template, options, step_name: str, **kwargs) -> int:
+        idx, prompt = _classify_step(
+            template, options, api_key=api_key, model=model, question=question, **kwargs
+        )
         if verbose:
             print(prompt)
+        trace.append({"step": step_name, "options": options, "chosen": options[idx]})
         return idx
 
     # Step 1 – Strand
     strands    = list(tree.keys())
-    strand     = strands[step(STRAND_PROMPT, strands)]
+    strand     = strands[step(STRAND_PROMPT, strands, "Strand")]
 
     # Step 2 – Sub-strand
     sub_strands = list(tree[strand].keys())
-    sub_strand  = sub_strands[step(SUB_STRAND_PROMPT, sub_strands, strand=strand)]
+    sub_strand  = sub_strands[step(SUB_STRAND_PROMPT, sub_strands, "Sub-Strand", strand=strand)]
 
     # Step 3 – Topic
     topics = list(tree[strand][sub_strand].keys())
-    topic  = topics[step(TOPIC_PROMPT, topics, strand=strand, sub_strand=sub_strand)]
+    topic  = topics[step(TOPIC_PROMPT, topics, "Topic", strand=strand, sub_strand=sub_strand)]
 
     # Step 4 – Learning Outcome
     lo_entries = tree[strand][sub_strand][topic]
-    lo_labels  = [e["learningOutcome"] for e in lo_entries]
-    lo         = lo_entries[step(LO_PROMPT, lo_labels, strand=strand, sub_strand=sub_strand, topic=topic)]
+    lo_labels  = [f"[{e['grade']}] {e['learningOutcome']}" for e in lo_entries]
+    lo_idx     = step(LO_PROMPT, lo_labels, "Learning Outcome", strand=strand, sub_strand=sub_strand, topic=topic)
+    lo         = lo_entries[lo_idx]
 
-    return {
+    result = {
         "strand":          strand,
         "subStrand":       sub_strand,
         "topic":           topic,
         "learningOutcome": lo["learningOutcome"],
         "loId":            lo["loId"],
     }
+
+    if return_trace:
+        return result, trace
+    return result
 
 
 # ── CLI entry-point ───────────────────────────────────────────────────────────

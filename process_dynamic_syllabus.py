@@ -6,8 +6,8 @@ import requests
 
 QUESTIONS_URL = "https://api-v1.zyrooai.com/api/v1/math-classifier/interview/questions"
 DYNAMIC_CSV   = "dynamic syllabus LO filled.csv"
-TREE_JSON     = "syllabus_tree.json"
-INDEX_JSON    = "lo_index.json"
+TREE_JSON     = "syllabus_tree_dynamic.json"
+INDEX_JSON    = "lo_index_dynamic.json"
 
 
 def strip_topic_prefix(topic: str) -> str:
