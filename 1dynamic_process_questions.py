@@ -1,5 +1,5 @@
+import csv
 import json
-from tabulate import tabulate
 
 
 def parse_ref(ref):
@@ -23,6 +23,12 @@ for item in data["data"]:
             "Learning Outcome": label["learningOutcome"]
         }
 
-rows = sorted(seen.values(), key=lambda r: parse_ref(r["Ref"]))
+rows = [v for _, v in sorted(seen.items(), key=lambda x: parse_ref(x[0]))]
 
-print(tabulate(rows, headers="keys", tablefmt="grid", maxcolwidths=[25, 20, 25, 8, 50]))
+output = "dynamic_learning_outcomes.csv"
+with open(output, "w", newline="") as f:
+    writer = csv.DictWriter(f, fieldnames=["Strand", "Sub-Strand", "Topic", "Loid", "Learning Outcome"])
+    writer.writeheader()
+    writer.writerows(rows)
+
+print(f"Saved {len(rows)} rows to {output}")
