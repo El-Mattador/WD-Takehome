@@ -1,3 +1,9 @@
 questions.json
 manual syllabus LO filled.csv
 dynamic_learning_outcomes.csv
+.gitignore
+dumpster/
+syllabus_tree.json
+lo_index.json
+.~lock.learning_outcomes.csv#
+.~lock.manual syllabus LO filled.csv#
