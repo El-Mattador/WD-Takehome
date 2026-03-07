@@ -178,89 +178,88 @@ with tab1:
             st.info("Previous results found. Click **Load Previous Results** to view them, or run a fresh evaluation.")
         else:
             st.info("No results yet. Click **Run Evaluation** to start.")
-        st.stop()
+    else:
+        results = st.session_state["eval_results"]
+        meta    = st.session_state.get("eval_meta", {})
 
-    results = st.session_state["eval_results"]
-    meta    = st.session_state.get("eval_meta", {})
+        if meta:
+            st.caption(
+                f"Model: `{meta.get('model', '—')}` · "
+                f"Source: {meta.get('source', '—')} · "
+                f"Run at: {meta.get('timestamp', '—')} · "
+                f"Total: {meta.get('total', len(results))} questions"
+            )
 
-    if meta:
-        st.caption(
-            f"Model: `{meta.get('model', '—')}` · "
-            f"Source: {meta.get('source', '—')} · "
-            f"Run at: {meta.get('timestamp', '—')} · "
-            f"Total: {meta.get('total', len(results))} questions"
+        accuracy = evaluate.compute_accuracy(results)
+        overall  = accuracy["overall"]
+
+        # ── Accuracy summary cards ────────────────────────────────────────────
+        st.subheader("Overall Accuracy")
+        c1, c2, c3, c4 = st.columns(4)
+        for col, (lvl, label) in zip(
+            [c1, c2, c3, c4],
+            evaluate.LEVEL_LABELS.items(),
+        ):
+            pct   = overall[lvl] * 100
+            n_ok  = sum(r["correct"][lvl] for r in results)
+            col.metric(label, f"{pct:.1f}%", f"{n_ok}/{len(results)} correct")
+
+        st.divider()
+
+        # ── Breakdown tables ──────────────────────────────────────────────────
+        with st.expander("Accuracy Breakdown by Strand / Sub-Strand", expanded=True):
+            t_strand, t_sub = st.tabs(["By Strand", "By Sub-Strand"])
+
+            with t_strand:
+                df_strand = evaluate.to_breakdown_df(accuracy["by_strand"])
+                st.dataframe(df_strand.set_index("Group"), use_container_width=True)
+
+            with t_sub:
+                df_sub = evaluate.to_breakdown_df(accuracy["by_substrand"])
+                st.dataframe(df_sub.set_index("Group"), use_container_width=True)
+
+        st.divider()
+
+        # ── Comparison table ──────────────────────────────────────────────────
+        st.subheader("Question-by-Question Comparison")
+
+        view_filter = st.radio(
+            "Show",
+            ["All", "Correct only", "Mismatches only"],
+            horizontal=True,
+            label_visibility="collapsed",
         )
 
-    accuracy = evaluate.compute_accuracy(results)
-    overall  = accuracy["overall"]
+        filtered = results
+        if view_filter == "Correct only":
+            filtered = [r for r in results if r["all_correct"]]
+        elif view_filter == "Mismatches only":
+            filtered = [r for r in results if not r["all_correct"]]
 
-    # ── Accuracy summary cards ────────────────────────────────────────────────
-    st.subheader("Overall Accuracy")
-    c1, c2, c3, c4 = st.columns(4)
-    for col, (lvl, label) in zip(
-        [c1, c2, c3, c4],
-        evaluate.LEVEL_LABELS.items(),
-    ):
-        pct   = overall[lvl] * 100
-        n_ok  = sum(r["correct"][lvl] for r in results)
-        col.metric(label, f"{pct:.1f}%", f"{n_ok}/{len(results)} correct")
+        st.caption(f"Showing {len(filtered)} / {len(results)} questions")
 
-    st.divider()
+        if filtered:
+            disp_df, match_df = evaluate.to_comparison_df(filtered)
 
-    # ── Breakdown tables ──────────────────────────────────────────────────────
-    with st.expander("Accuracy Breakdown by Strand / Sub-Strand", expanded=True):
-        t_strand, t_sub = st.tabs(["By Strand", "By Sub-Strand"])
+            level_cols = list(evaluate.LEVEL_LABELS.values())
 
-        with t_strand:
-            df_strand = evaluate.to_breakdown_df(accuracy["by_strand"])
-            st.dataframe(df_strand.set_index("Group"), use_container_width=True)
+            def _colour_cells(col_series):
+                col_name = col_series.name
+                if col_name not in level_cols:
+                    return [""] * len(col_series)
+                match_col = match_df[col_name]
+                return [
+                    "background-color: #1c4532; color: #d1fae5" if m
+                    else "background-color: #4c1616; color: #fee2e2"
+                    for m in match_col
+                ]
 
-        with t_sub:
-            df_sub = evaluate.to_breakdown_df(accuracy["by_substrand"])
-            st.dataframe(df_sub.set_index("Group"), use_container_width=True)
-
-    st.divider()
-
-    # ── Comparison table ──────────────────────────────────────────────────────
-    st.subheader("Question-by-Question Comparison")
-
-    view_filter = st.radio(
-        "Show",
-        ["All", "Correct only", "Mismatches only"],
-        horizontal=True,
-        label_visibility="collapsed",
-    )
-
-    filtered = results
-    if view_filter == "Correct only":
-        filtered = [r for r in results if r["all_correct"]]
-    elif view_filter == "Mismatches only":
-        filtered = [r for r in results if not r["all_correct"]]
-
-    st.caption(f"Showing {len(filtered)} / {len(results)} questions")
-
-    if filtered:
-        disp_df, match_df = evaluate.to_comparison_df(filtered)
-
-        level_cols = list(evaluate.LEVEL_LABELS.values())
-
-        def _colour_cells(col_series):
-            col_name = col_series.name
-            if col_name not in level_cols:
-                return [""] * len(col_series)
-            match_col = match_df[col_name]
-            return [
-                "background-color: #1c4532; color: #d1fae5" if m
-                else "background-color: #4c1616; color: #fee2e2"
-                for m in match_col
-            ]
-
-        styled = (
-            disp_df.style
-            .apply(_colour_cells, axis=0)
-            .set_properties(**{"white-space": "pre-wrap"})
-        )
-        st.dataframe(styled, use_container_width=True, height=500)
+            styled = (
+                disp_df.style
+                .apply(_colour_cells, axis=0)
+                .set_properties(**{"white-space": "pre-wrap"})
+            )
+            st.dataframe(styled, use_container_width=True, height=500)
 
 
 # ── Tab 2: Custom Question ────────────────────────────────────────────────────

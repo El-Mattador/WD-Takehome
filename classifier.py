@@ -23,7 +23,7 @@ API_KEY             = os.getenv("LLM_API_KEY", "")
 MODEL               = os.getenv("MODEL", "google/gemini-2.5-flash-lite")
 
 OPENROUTER_URL      = "https://openrouter.ai/api/v1/chat/completions"
-SYLLABUS_FILE       = Path(__file__).parent / "syllabus_tree.json"
+SYLLABUS_FILE       = Path(__file__).parent / "syllabus_tree_manual.json"
 MAX_RESPONSE_TOKENS = 8  # LLM only needs to return a single digit index
 
 
@@ -72,6 +72,7 @@ def _call_llm(prompt: str, api_key: str | None = None, model: str | None = None)
         json={
             "model": model or MODEL,
             "messages": [{"role": "user", "content": prompt}],
+            "temperature": 0,
             "max_tokens": MAX_RESPONSE_TOKENS,
         },
         timeout=30,
