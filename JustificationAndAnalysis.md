@@ -39,13 +39,24 @@ The main limitation of the top-down hierarchical design is the possibility of **
 
 If the model selects the wrong **strand**, it becomes impossible to recover the correct answer later in the pipeline because the correct sub-strand and learning outcomes will no longer be available as options.
 
-For example, if a question about **money calculations** is mistakenly classified under **Number and Algebra** instead of **Measurement and Geometry**, the correct learning outcome cannot be selected in later stages.
+For example, if a question about **angles** is mistakenly classified under **Number and Algebra** instead of **Measurement and Geometry**, the correct learning outcome under Geometry cannot be reached in later stages.
 
 The prompt optimizations and structural assumptions help reduce this risk, but they cannot eliminate it entirely.
 
 ---
 
 # Observations from Error Analysis
+
+Evaluation was run on 67 questions using `google/gemini-2.5-flash-lite` with the full 77-LO manual syllabus. The results were:
+
+| Level | Accuracy |
+|---|---|
+| Strand | 91.0% |
+| Sub-Strand | 86.6% |
+| Topic | 64.2% |
+| Learning Outcome | 46.3% |
+
+Accuracy degrades predictably as the hierarchy deepens, which is expected behaviour for hierarchical classification since errors at a higher level cascade downward.
 
 After analysing the misclassified examples, several potential improvements were identified.
 
@@ -54,6 +65,8 @@ First, some questions contain **multiple-choice options**, which may provide use
 Second, inconsistencies were observed in the dataset. In one example, the **strand and sub-strand appear to contradict the syllabus structure**, suggesting the presence of noisy or incorrect labels. Designing prompts to explicitly account for such inconsistencies could reduce classification accuracy on cleaner data, so this case was not specifically handled in the current pipeline.
 
 Third, some learning outcomes are **very similar to each other**. For example, questions related to multiplication tables could reasonably match more than one learning outcome. In such cases, a simple heuristic could improve consistency. For instance, if two candidate learning outcomes are highly similar, the model could select the one with the **lower topic reference number**, which often corresponds to the more general concept.
+
+The steepest accuracy drop occurs at the Topic level (86.6% → 64.2%), suggesting that fine-grained topic discrimination — particularly between P3 and P4 topics with similar names such as "Angles" and "Area and Perimeter" — is the primary bottleneck in the current pipeline.
 
 ---
 

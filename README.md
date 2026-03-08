@@ -104,57 +104,14 @@ Opens at `http://localhost:8501`.
 
 ## Classification Strategy
 
-### Approach: Hierarchical LLM Calls
+The classifier makes **4 sequential LLM calls**, narrowing the taxonomy one level at a time — Strand → Sub-Strand → Topic → Learning Outcome. At each step the LLM is shown only the valid options for that level (3–7 choices) and replies with a single index number, keeping token cost near zero. Grade (P3 vs P4) is not a separate classification step; it falls out naturally when the final Learning Outcome is selected, since each LO is labelled with its grade.
 
-The classifier makes **4 sequential LLM calls**, narrowing the taxonomy one level at a time:
+| Mode | Source | LO Count |
+|---|---|---|
+| **Manual (CSV)** | Hand-curated `manual syllabus LO.csv` | 77 (complete syllabus) |
+| **Dynamic (API)** | LOs extracted from the 67 ground-truth labels | ~30–40 (only LOs present in the test set) |
 
-```
-Question
-  → Step 1: Pick Strand         (3 options)
-  → Step 2: Pick Sub-Strand     (2–7 options, given the strand)
-  → Step 3: Pick Topic          (2–6 options, given the sub-strand)
-  → Step 4: Pick Learning Outcome (1–6 options, given the topic)
-```
-
-At each step, the LLM is shown only the valid options for that level — never the full 77-LO list at once. It replies with a single integer index, keeping output tokens minimal (`max_tokens=8`).
-
-### Why hierarchical over single-shot?
-
-| Approach | Decision space per call | Explainability | Error propagation |
-|---|---|---|---|
-| Single-shot (all 77 LOs at once) | 77 options | Low | None |
-| Hierarchical (4 steps) | 3–7 options | High — each step is auditable | Errors at higher levels cascade |
-
-The hierarchical approach was chosen because:
-
-1. **Smaller decision spaces** — the LLM is less likely to confuse similar-sounding LOs when only shown 3–7 options rather than 77
-2. **Explainability** — every classification decision is visible and auditable in the UI's decision trace
-3. **Grade determination falls out naturally** — P3 and P4 topics with the same name are merged in the tree. The final LO step presents grade-labelled options (`[P3] division with remainder` vs `[P4] ...`), so grade is determined as a consequence of picking the right LO rather than as a separate step
-
-### Prompt Design
-
-Each prompt is minimal and self-contained:
-
-```
-You are a classifying machine. You will receive a math question and your goal
-is to classify the question into one of the options.
-Math question: "{question}"
-Which strand? Reply with the number only.
-1. NUMBER AND ALGEBRA
-2. MEASUREMENT AND GEOMETRY
-3. STATISTICS
-```
-
-The instruction to reply with a number only keeps the response deterministic and the token cost near zero. A fallback to index 0 handles any unexpected output.
-
-### Two Syllabus Modes
-
-| Mode | Source | LO Count | Best for |
-|---|---|---|---|
-| **Manual (CSV)** | Hand-curated `manual syllabus LO.csv` | 77 (complete syllabus) | Full coverage, custom questions outside the test set |
-| **Dynamic (API)** | LOs extracted from the 67 ground-truth labels | ~30–40 (only what appears in the test set) | Comparing against a minimal knowledge base |
-
-The Dynamic mode demonstrates the trade-off: by only knowing LOs present in the test questions, the classifier has fewer options to choose from per step, but cannot correctly classify any question whose true LO was not represented in the 67-question set.
+For full justification, prompt design rationale, observed failure modes, and alternative approaches considered, see [JustificationAndAnalysis.md](JustificationAndAnalysis.md).
 
 ---
 
