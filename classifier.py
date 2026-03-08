@@ -13,16 +13,15 @@ import os
 import re
 from pathlib import Path
 
-import requests
+from openai import OpenAI
 from dotenv import load_dotenv
 
 load_dotenv()
 
 # ── Config ────────────────────────────────────────────────────────────────────
-API_KEY             = os.getenv("LLM_API_KEY", "")
+API_KEY             = os.getenv("AI_GATEWAY_API_KEY", "")
 MODEL               = os.getenv("MODEL", "google/gemini-2.5-flash-lite")
 
-OPENROUTER_URL      = "https://openrouter.ai/api/v1/chat/completions"
 SYLLABUS_FILE       = Path(__file__).parent / "syllabus_tree_manual.json"
 MAX_RESPONSE_TOKENS = 8  # LLM only needs to return a single digit index
 
@@ -63,25 +62,17 @@ Which learning outcome? Reply with the number only.
 
 def _call_llm(prompt: str, api_key: str | None = None, model: str | None = None) -> str:
     """Send a single prompt, return stripped text response."""
-    resp = requests.post(
-        url=OPENROUTER_URL,
-        headers={
-            "Authorization": f"Bearer {api_key or API_KEY}",
-            "Content-Type": "application/json",
-        },
-        json={
-            "model": model or MODEL,
-            "messages": [{"role": "user", "content": prompt}],
-            "temperature": 0,
-            "max_tokens": MAX_RESPONSE_TOKENS,
-        },
-        timeout=30,
+    client = OpenAI(
+        api_key=api_key or API_KEY,
+        base_url="https://ai-gateway.vercel.sh/v1",
     )
-    resp.raise_for_status()
-    try:
-        return resp.json()["choices"][0]["message"]["content"].strip()
-    except (KeyError, IndexError) as e:
-        raise ValueError(f"Unexpected API response structure: {resp.json()}") from e
+    response = client.chat.completions.create(
+        model=model or MODEL,
+        messages=[{"role": "user", "content": prompt}],
+        temperature=0,
+        max_tokens=MAX_RESPONSE_TOKENS,
+    )
+    return response.choices[0].message.content.strip()
 
 
 def _pick(response: str, options: list, fallback: int = 0) -> int:

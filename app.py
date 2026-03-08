@@ -96,7 +96,7 @@ with st.sidebar:
 
     api_key = st.text_input(
         "API Key",
-        value=os.getenv("LLM_API_KEY", ""),
+        value=os.getenv("AI_GATEWAY_API_KEY", ""),
         type="password",
         help="OpenRouter API key. Changes here override the .env value for this session.",
     )
