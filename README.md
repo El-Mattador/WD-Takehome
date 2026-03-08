@@ -40,7 +40,7 @@ The model can be any [OpenRouter-compatible model string](https://openrouter.ai/
 
 The following files are excluded from the repository and must be placed in the project root before running:
 
-- `manual syllabus LO.csv` — the hand-curated Singapore MOE P3–P4 syllabus (77 learning outcomes)
+- `takehomezip.zip` — this file contains all file generated that the streamlit app needs to load for both evaluation and to read the syllabus tree structure. It can be generated through the streamlit app. To save time and computing, unzip the file and copy all contents to root. There should be a results folder in root after copying the contents.
 
 > **These files will be provided separately by the submitter.**
 
@@ -75,9 +75,12 @@ Opens at `http://localhost:8501`.
 
 ## Web App
 
-The app has three tabs:
+### Sidebar:
+- **Syllabus Source** — Controls which data source to use for the extensive list of syllabus. Choose to either use the syllabus list collated from https://bramble-century-072.notion.site/Syllabus-31913c0ea6608055ac51dd3fca4e4d7c to create [manual syllabus LO.csv](<manual syllabus LO.csv>), or dynamically compile this table from https://api-v1.zyrooai.com/api/v1/math-classifier/interview/questions. Should the post processed files not be found, a **Generate Syllabus** button appears to build it on the spot.
+- **API Key** and **Model** — override `.env` values live without restarting the app. 
 
-### Batch Evaluation
+
+### Batch Evaluation Tab
 - Click **Run Evaluation** to classify all 67 API questions and compare against ground truth labels
 - Results are saved automatically and can be reloaded without re-running via **Load Previous Results**
 - Displays:
@@ -95,9 +98,7 @@ The app has three tabs:
 - Browse the full loaded syllabus tree (strand > sub-strand > topic > LOs)
 - Shows LO count per level and grade labels per outcome
 
-The **sidebar** controls:
-- **Syllabus Source** — toggle between Manual (CSV, 77 LOs) and Dynamic (API-derived) at any time
-- **API Key** and **Model** — override `.env` values live without restarting the app. If the syllabus JSON for the selected source has not been generated yet, a **Generate Syllabus** button appears to build it on the spot.
+
 
 ---
 
@@ -160,9 +161,32 @@ The Dynamic mode demonstrates the trade-off: by only knowing LOs present in the 
 ## Accuracy Results
 
 > Results are saved to `results/results_<source>_<model>.json` after each evaluation run.
-> Run `python evaluate.py` or use the web app to generate results.
+> Run `uv run python evaluate.py` or use the web app to generate results.
 
-*To be filled in after evaluation run.*
+Evaluated on **67 questions** using `google/gemini-2.5-flash-lite` with the **Manual (CSV)** syllabus source (77 LOs).
+
+| Level | Correct | Accuracy |
+|---|---|---|
+| Strand | 61 / 67 | **91.0%** |
+| Sub-Strand | 58 / 67 | **86.6%** |
+| Topic | 43 / 67 | **64.2%** |
+| Learning Outcome (LO ID) | 31 / 67 | **46.3%** |
+
+### Breakdown by Strand
+
+| Strand | Total | Strand | Sub-Strand | Topic | LO ID |
+|---|---|---|---|---|---|
+| NUMBER AND ALGEBRA | 57 | 98% | 89% | 63% | 44% |
+| MEASUREMENT AND GEOMETRY | 10 | 50% | 70% | 70% | 60% |
+
+### Interpretation
+
+Accuracy degrades predictably as the hierarchy deepens — this is expected behaviour for hierarchical classification, since errors at a higher level cascade downward. The model performs strongly at the Strand level (91%) and Sub-Strand level (87%), indicating that broad topic area identification is reliable.
+
+The steeper drop at Topic (64%) and LO (46%) reflects two main failure modes:
+
+1. **Topic ambiguity** — several topics share similar names across P3 and P4 (e.g. "Angles", "Area and Perimeter"), and the model sometimes picks the wrong one when the question does not contain explicit grade-level signals.
+2. **Fine-grained LO discrimination** — within a topic, learning outcomes can be closely related (e.g. "division with remainder" vs "multiplication and division algorithms"), requiring the model to pick up on subtle linguistic cues in the question.
 
 ---
 
